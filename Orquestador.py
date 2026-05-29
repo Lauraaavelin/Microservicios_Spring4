@@ -1,7 +1,7 @@
 import requests
 import time
 
-# IPs públicas extraídas directamente de tu consola de AWS
+
 IP_CLIENTE = "13.222.179.241"
 IP_PROYECTO = "100.54.217.88"
 IP_REPORTES = "52.87.172.29"
@@ -13,7 +13,6 @@ def ejecutar_orquestacion():
     #Crear Cliente
     print("\n[Paso 1] Solicitando creación de cliente...")
     url_cliente = f"http://{IP_CLIENTE}:8000/api/clientes/"
-    # Datos fingidos para la simulación
     payload_cliente = {"nombre": "Cliente Nuevo S.A.", "nit": "900123456-1"} 
     
     res_cliente = requests.post(url_cliente, json=payload_cliente)
@@ -21,7 +20,7 @@ def ejecutar_orquestacion():
         print("ERROR: Falló la creación del cliente. Deteniendo flujo.")
         return
     
-    cliente_id = res_cliente.json().get("id", 99) # ID ficticio si no retorna
+    cliente_id = res_cliente.json().get("id", 99) 
     print(f"Éxito: Cliente creado con ID: {cliente_id}")
 
 
