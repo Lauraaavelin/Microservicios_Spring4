@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { Pool } from 'pg';
-
+// a ver si ai si se cambia 
 const pool = new Pool({
     user: 'postgres',
     password: 'Factura2026',
